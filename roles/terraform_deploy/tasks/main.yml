@@ -1,0 +1,21 @@
+---
+# tasks file for vmware_create
+- name: First task
+  debug:
+    msg: Hello from the first task
+
+- name: print env
+  shell: env
+  register: env_out
+
+- name: debug
+  debug:
+    var: env_out
+
+- name: include terraform template tasks
+  include_tasks: terraform_template.yml
+  when: terraform_template | bool
+
+- name: include terraform tasks
+  include_tasks: terraform_deploy.yml
+  when: terraform_deploy | bool

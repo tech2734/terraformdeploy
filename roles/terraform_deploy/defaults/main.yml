@@ -1,0 +1,4 @@
+---
+# defaults file for vmware_create
+terraform_deploy: false
+terraform_template: true

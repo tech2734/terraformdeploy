@@ -32,4 +32,3 @@ vsphere_datastore: nameofdatastore
       import_role:
         name: terraform_deploy
 ```
-

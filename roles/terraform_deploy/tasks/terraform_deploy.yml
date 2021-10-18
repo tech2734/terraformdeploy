@@ -1,0 +1,10 @@
+---
+- name: -- DEPLOY VM TERRAFORM --
+  terraform:
+    project_path: "~/terraform/{{ server_name }}"
+    state: present
+    force_init: true
+  environment:
+    TF_VAR_vsphere_server: "{{ vsphere_server }}"
+    TF_VAR_vsphere_user: "{{ vsphere_user }}"
+    TF_VAR_vsphere_password: "{{ vsphere_password }}"

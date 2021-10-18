@@ -1,0 +1,19 @@
+---
+- name: Create folder for new host
+  file:
+    path: "~/terraform/{{ server_name }}"
+    state: directory
+    mode: '0755'
+
+- name: Copy template into new folder
+  template:
+    src: terraform.tfvars.j2
+    dest: "~/terraform/{{ server_name }}/terraform.tfvars"
+
+- name: Copy files into new folder
+  copy:
+    src: "{{ item }}"
+    dest: "~/terraform/{{ server_name }}/{{ item }}"
+  with_items:
+    - main.tf
+    - variables.tf
