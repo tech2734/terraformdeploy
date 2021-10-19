@@ -1,5 +1,5 @@
 provider "vsphere" {
-    version = "~> 1.5"
+    version = "~> 2.0"
 
   # If you have a self-signed cert
   allow_unverified_ssl = true
