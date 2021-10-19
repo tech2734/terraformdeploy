@@ -6,7 +6,7 @@
 
 - name: copy directory
   copy:
-    src: "{{ playbook_dir }}/terraform/"
+    src: "{{ playbook_dir }}/../terraform/"
     dest: "{{ base_dir }}"
 
 - name: end for now
