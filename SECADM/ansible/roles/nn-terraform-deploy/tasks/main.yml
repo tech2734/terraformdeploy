@@ -4,13 +4,13 @@
   debug:
     msg: Hello from the first task
 
-- name: print env
-  shell: env
-  register: env_out
+- name: copy directory
+  copy:
+    src: "{{ playbook_dir }}/terraform/"
+    dest: "{{ base_dir }}"
 
-- name: debug
-  debug:
-    var: env_out
+- name: end for now
+  meta: end_host
 
 - name: include terraform template tasks
   include_tasks: terraform_template.yml

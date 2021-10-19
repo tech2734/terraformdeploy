@@ -1,0 +1,10 @@
+---
+- name: Create vmware VM using terraform
+  hosts: terraform
+  gather_facts: false
+
+
+  tasks:
+    - name: Import terraform_deploy role
+      import_role:
+        name: nn-terraform-deploy
