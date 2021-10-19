@@ -1,7 +1,5 @@
 provider "vsphere" {
-    vsphere_server = var.vsphere_server
-    user           = var.vsphere_user
-    password       = var.vsphere_password
+    version = "~> 1.5"
 
   # If you have a self-signed cert
   allow_unverified_ssl = true
