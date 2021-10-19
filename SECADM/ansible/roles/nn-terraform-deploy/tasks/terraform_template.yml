@@ -7,13 +7,5 @@
 
 - name: Copy template into new folder
   template:
-    src: terraform.tfvars.j2
-    dest: "~/terraform/{{ server_name }}/terraform.tfvars"
-
-- name: Copy files into new folder
-  copy:
-    src: "{{ item }}"
-    dest: "~/terraform/{{ server_name }}/{{ item }}"
-  with_items:
-    - main.tf
-    - variables.tf
+    src: terraform.tf.j2
+    dest: "~/terraform/{{ server_name }}/{{ server_name }}.tf"

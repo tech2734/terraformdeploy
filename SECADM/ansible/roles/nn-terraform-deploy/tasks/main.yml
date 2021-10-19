@@ -9,9 +9,6 @@
     src: "{{ playbook_dir }}/../terraform/"
     dest: "{{ base_dir }}"
 
-- name: end for now
-  meta: end_host
-
 - name: include terraform template tasks
   include_tasks: terraform_template.yml
   when: terraform_template | bool
