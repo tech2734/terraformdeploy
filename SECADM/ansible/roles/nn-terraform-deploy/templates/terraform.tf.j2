@@ -1,7 +1,9 @@
 module "rhel8-std" {
     source = "../gso-deploy/modules/rhel8-std"
 
-
+    vsphere_server     = var.vsphere_server
+    vsphere_user       = var.vsphere_user
+    vsphere_password   = var.vsphere_password
     datacenter         = "{{ vsphere_datacenter }}"
     datastore          = "{{ vsphere_datastore }}"
     cluster            = "{{ vsphere_cluster }}"
