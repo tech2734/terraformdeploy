@@ -53,7 +53,7 @@ resource "vsphere_virtual_machine" "rhelvm" {
     size             = 40
   }
 
-  guest_id = "rhel8_64Guest"
+  guest_id = "rhel7_64Guest"
 
   clone {
     template_uuid = data.vsphere_virtual_machine.rhel.id
