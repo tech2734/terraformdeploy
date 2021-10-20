@@ -5,6 +5,6 @@
     state: present
     force_init: true
   environment:
-    TF_VAR_vsphere_server: "{{ vsphere_server }}"
-    TF_VAR_vsphere_user: "{{ vsphere_user }}"
-    TF_VAR_vsphere_password: "{{ vsphere_password }}"
+    VSPHERE_SERVER: "{{ vsphere_server }}"
+    VSPHERE_USER: "{{ vsphere_user }}"
+    VSPHERE_PASSWORD: "{{ vsphere_password }}"
