@@ -9,3 +9,8 @@
   template:
     src: terraform.tf.j2
     dest: "~/terraform/{{ server_name }}/{{ server_name }}.tf"
+
+- name: copy variables file
+  copy:
+    src:  variables.tf
+    dest: "~/terraform/{{ server_name }}/variables.tf"
