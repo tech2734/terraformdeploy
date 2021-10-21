@@ -39,11 +39,6 @@ variable "vm_template_name" {
   type        = string
 }
 
-variable "vmguest_netmask" {
-  description = "VM Guest Netmask"
-  type        = string
-}
-
 variable "vmguest_domain" {
   description = "VM Guest domain name"
   type        = string

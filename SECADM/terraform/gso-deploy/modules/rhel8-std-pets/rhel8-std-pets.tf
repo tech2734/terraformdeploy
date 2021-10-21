@@ -54,7 +54,7 @@ resource "vsphere_virtual_machine" "rhel8_std_pets" {
 
   disk {
     unit_number = 0
-    label            = "osdisk${count.index}""
+    label            = "osdisk${count.index}"
     thin_provisioned = true
     size             = var.vm_os_disk
   }
@@ -78,12 +78,12 @@ resource "vsphere_virtual_machine" "rhel8_std_pets" {
 
     customize {
       linux_options {
-        host_name = "$(var.instance_data[count.index]["vmguest_hostname])"
+        host_name = "${var.instance_data[count.index]["vmguest_hostname"]}"
         domain    = var.vmguest_domain
       }
 
       network_interface {
-        ipv4_address = "$(var.instance_data[count.index]["vmguest_ip_address"])"
+        ipv4_address = "${var.instance_data[count.index]["vmguest_ip_address"]}"
         ipv4_netmask = var.vmguest_netmask
       }
 
