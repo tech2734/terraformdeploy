@@ -1,0 +1,6 @@
+---
+# tasks file for vmware_create
+
+- name: include ansible tasks
+  include_tasks: ansible_deploy.yml
+  when: ansible_deploy | bool

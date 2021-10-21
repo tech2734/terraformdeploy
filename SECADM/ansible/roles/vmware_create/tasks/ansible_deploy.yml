@@ -1,0 +1,36 @@
+---
+- name: -- DEPLOY VM ANSIBLE --
+  vmware_guest:
+    name: testdeploy
+    datacenter: Practice_Lab
+    cluster: Production
+    state: present
+    annotation: "comments:"
+    template: "{{ vm_template }}"
+    customization:
+      dns_servers: 
+        - 10.1.196.1
+      domain: practice.redhat.com
+      hostname: testdeploy
+    networks:
+      - name: VM Network
+        ip: 10.1.195.220
+        netmask: 255.255.255.0
+        device_type: vmxnet3
+        gateway: 10.1.195.254
+        type: static
+    guest_id: rhel8_64Guest
+    folder: "/"
+    validate_certs: False
+    hardware:
+      memory_mb: "4096"
+      num_cpus: "1"
+      num_cpu_cores_per_socket: 1
+      scsi: paravirtual
+      hotadd_cpu: True
+      hotadd_memory: True
+    disk:
+    - size_gb: 40
+      type: eagerzeroedthick
+      datastore: "pool0-ceph-vsphere"
+  delegate_to: localhost

@@ -1,0 +1,10 @@
+---
+- name: Create vmware VM
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Import vmware_create role
+      import_role:
+        name: vmware_create
