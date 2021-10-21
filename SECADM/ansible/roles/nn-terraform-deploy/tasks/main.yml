@@ -4,10 +4,20 @@
   debug:
     msg: Hello from the first task
 
+- name: make sure base_dir exists
+  file:
+    path: "{{ base_dir }}"
+    state: directory
+    mode: '0755'
+
 - name: copy directory
   copy:
     src: "{{ playbook_dir }}/../terraform/"
     dest: "{{ base_dir }}"
+
+- name: include terraform create tasks
+  include_tasks: terraform_create.yml
+  when: terraform_create | bool
 
 - name: include terraform template tasks
   include_tasks: terraform_template.yml
