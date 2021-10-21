@@ -2,6 +2,9 @@ module "rhel8-std-pets" {
     source = "../modules/rhel8-std-pets"
 
     ## VMware configuration variables
+    vsphere_server     = ""
+    vsphere_user       = ""
+    vsphere_password   = ""
     datacenter          = "Practice_Lab"
     datastore           = "pool0-ceph-vsphere"
     cluster             = "Production"

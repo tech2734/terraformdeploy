@@ -1,9 +1,5 @@
 ---
 # tasks file for vmware_create
-- name: First task
-  debug:
-    msg: Hello from the first task
-
 - name: make sure base_dir exists
   file:
     path: "{{ base_dir }}"
