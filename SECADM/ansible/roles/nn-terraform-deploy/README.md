@@ -9,7 +9,7 @@ This role will create Terraform templates on the Terraform server and then deplo
 
 ```yaml
 ---
-server_name: nameofserver
+server_name: nameofserver1
 server_ip: x.x.x.x
 server_gateway: x.x.x.x
 domain_name: nameofdomain.com
