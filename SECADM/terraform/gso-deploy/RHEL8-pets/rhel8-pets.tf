@@ -11,7 +11,6 @@ module "rhel8-std-pets" {
     network_name        = "VM Network"
     vm_template_name    = "jbrhel8clone1"
 
-
     ## VM Guest configuration variables
 
     instance_data = [
